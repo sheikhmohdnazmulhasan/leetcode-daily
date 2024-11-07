@@ -12,20 +12,19 @@
 // 3. If a bit is set, increment the count for that bit.
 // 4. Return the maximum count across all bit positions as it represents the largest subset size with a bitwise AND greater than zero.
 
-
 function largestCombination(candidates) {
-    const bitCounts = Array(24).fill(0);
+  const bitCounts = Array(24).fill(0);
 
-    for (let num of candidates) {
-        // Check each bit position
-        for (let bit = 0; bit < 24; bit++) {
-            if ((num & (1 << bit)) !== 0) {
-                bitCounts[bit]++;
-            }
-        }
+  for (let num of candidates) {
+    // Check each bit position
+    for (let bit = 0; bit < 24; bit++) {
+      if ((num & (1 << bit)) !== 0) {
+        bitCounts[bit]++;
+      }
     }
+  }
 
-    return Math.max(...bitCounts);
+  return Math.max(...bitCounts);
 }
 
 // Sample call
